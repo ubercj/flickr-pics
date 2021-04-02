@@ -1,0 +1,7 @@
+<div class="flex-container">
+  <div class="photo-feed">
+    <% @flickr.photos.search(user_id: params[:user][:user_id]).each do |photo| %>
+      <img src="https://live.staticflickr.com/<%= photo['server'] %>/<%= photo['id'] %>_<%= photo['secret'] %>.jpg" alt="">
+    <% end %>
+  </div>
+</div>

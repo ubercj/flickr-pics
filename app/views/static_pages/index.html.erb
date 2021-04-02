@@ -1,0 +1,11 @@
+<h1>Flickr Pics</h1>
+
+<%= form_with url: "/static_pages", scope: :user, method: :get do |form| %>
+  <%= form.label :user_id, "User ID" %>
+  <%= form.text_field :user_id, placeholder: "Paste a Flickr user ID here" %>
+  <%= form.submit "Get Photos" %>
+<% end %>
+
+<% if params[:user] %>
+  <%= render "photos" %>
+<% end %>
